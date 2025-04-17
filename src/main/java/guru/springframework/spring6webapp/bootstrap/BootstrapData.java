@@ -31,7 +31,7 @@ public class BootstrapData implements CommandLineRunner {
     public void run(String... args) throws Exception {
         Author eric = new Author();
         eric.setFirstName("Eric");
-        eric.setLastName("Guru");
+        eric.setLastName("Evans");
 
         Book ddd = new Book();
         ddd.setTitle("Domain Driven Design");
@@ -53,6 +53,8 @@ public class BootstrapData implements CommandLineRunner {
 
         ericSaved.getBooks().add(dddSaved);
         rodSaved.getBooks().add(noEJBSaved);
+        dddSaved.getAuthors().add(ericSaved);
+        noEJBSaved.getAuthors().add(rodSaved);
 
         Publisher publisher = new Publisher();
         publisher.setPublisherName("Publisher Name");
